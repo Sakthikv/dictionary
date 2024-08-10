@@ -1,0 +1,42 @@
+body {
+
+
+    background: linear-gradient(120deg, rgb(63, 206, 224), rgb(207, 19, 145));
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.fa-solid {
+    font-size: 20px;
+    color: rgb(219, 173, 21);
+}
+
+#inp {
+    width: 250px;
+    height: 30px;
+    text-indent: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: gold;
+
+
+}
+
+#txt {
+    color: white;
+    font-size: 20px;
+}
+
+#btn {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background: linear-gradient(120deg, yellow, rgb(214, 119, 9));
+    font-size: 20px;
+    color: rgb(228, 17, 175);
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dic.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body id="b">
+    <h1>DICTIONARY</h1>
+    <input type="text" id="inp" placeholder="Enter the word">
+    <br> <br>
+    <button onclick="search()" id="btn"><b>search</b></button>
+    <br><br>
+
+    <p id="txt"></p>
+    <br>
+    <i class="fa-solid fa-volume-high" onclick="audio1()"></i>
+    <audio src="" id="au"></audio>
+    <br><br>
+
+    
+
+    <script>
+        function search() {
+
+            let inp1 = document.getElementById("inp").value
+            fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + inp1).then(function (res) {
+                res.json().then(function (data) {
+
+                    let txt1 = document.getElementById("txt")
+                    p = data[0].meanings[0].definitions[0].definition;
+                    txt1.innerText = p
+                })
+
+            })
+        }
+        function audio1() {
+
+            let inp1 = document.getElementById("inp").value
+            fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + inp1).then(function (res) {
+                res.json().then(function (data) {
+
+
+                    let a = document.getElementById("au")
+                    a.src = data[0].phonetics[0].audio;
+console.log("audio");
+                    a.play();
+                })
+
+            })
+        }
+       
+
+    </script>
+
+</body>
+
+</html>
